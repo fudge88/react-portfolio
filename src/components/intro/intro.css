@@ -1,7 +1,7 @@
 body {
   font-family: "Open Sans", sans-serif;
-  background-color: rgb(48, 44, 44);
-  color: white;
+  /* background-color: rgb(48, 44, 44);
+  color: white; */
 }
 
 .intro {
@@ -17,6 +17,7 @@ body {
   flex: 1;
   position: relative;
 }
+
 .intro-left-wrapper {
   padding: 80px;
   display: flex;
@@ -67,6 +68,7 @@ body {
 
 .intro-desc {
   padding-top: 20px;
+  font-size: 25px;
   height: 50%;
 }
 

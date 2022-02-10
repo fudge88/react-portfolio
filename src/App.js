@@ -1,10 +1,13 @@
 import Intro from "./components/intro/Intro";
+import About from "./components/about/About";
 import "./App.css";
+
 function App() {
   return (
-    <h1>
+    <div>
       <Intro />
-    </h1>
+      <About />
+    </div>
   );
 }
 

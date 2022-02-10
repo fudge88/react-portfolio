@@ -1,0 +1,20 @@
+.about {
+  display: flex;
+  height: 100vh;
+}
+
+.about-left {
+  flex: 1;
+}
+
+.about-right {
+  flex: 1;
+  position: relative;
+}
+
+.about-card-bg {
+  clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%);
+  background-color: orangered;
+  height: 100%;
+  width: 100%;
+}
