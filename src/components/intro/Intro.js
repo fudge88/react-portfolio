@@ -6,7 +6,7 @@ function Intro() {
     <div className="intro">
       <div className="intro-left">
         <div className="intro-left-wrapper">
-          <h3 className="intro-text">Hello! I'm</h3>
+          <h3 className="intro-text">Hello! My name is</h3>
           <h1 className="intro-name">Fahra Akhlaq</h1>
           <div className="job-title-container">
             <div className="job-title-wrapper">
