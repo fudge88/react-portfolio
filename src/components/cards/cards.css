@@ -1,0 +1,80 @@
+.card {
+  position: relative;
+  width: 30%;
+  height: 20vh;
+  margin: 20px 10px;
+  border: 2px solid rgb(187, 186, 186);
+  border-radius: 10px 10px 0px 0px;
+  overflow: hidden;
+  /* object-fit: contain; */
+}
+
+.card-browser {
+  height: 20px;
+  background-color: gray;
+  display: flex;
+  align-items: center;
+}
+
+.card-circle {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  margin: 3px;
+  background-color: white;
+}
+.btn-container {
+  transform: rotate(-90deg) translateX(-180px);
+  position: absolute;
+  display: inline;
+  align-items: center;
+}
+.btn {
+  /* transform: rotate(-90deg) translateX(-180px); */
+  position: relative;
+  top: 365px;
+  right: -85px;
+  border: none;
+  display: inline;
+  margin: 0 10px;
+  text-align: center;
+  cursor: pointer;
+  text-transform: uppercase;
+  outline: none;
+  overflow: hidden;
+  color: #fff;
+  font-weight: 700;
+  font-size: 15px;
+  background-color: #222;
+  padding: 10px 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn span {
+  position: relative;
+  z-index: 1;
+}
+
+.btn:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 490%;
+  width: 140%;
+  background: orangered;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  -webkit-transform: translateX(-98%) translateY(-25%) rotate(45deg);
+  transform: translateX(-98%) translateY(-25%) rotate(45deg);
+}
+
+.btn:hover:after {
+  -webkit-transform: translateX(-9%) translateY(-25%) rotate(45deg);
+  transform: translateX(-9%) translateY(-25%) rotate(45deg);
+}
+
+.card-img {
+  width: 100%;
+}

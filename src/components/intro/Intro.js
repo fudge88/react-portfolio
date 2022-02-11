@@ -16,8 +16,9 @@ function Intro() {
             </div>
           </div>
           <div className="intro-desc">
-            Strengths in creativity, teamwork, and building projects in and
-            agile manner from ideation to execution.
+            I am a creative, and fresh thinking individual with experience of
+            managing projects and a skill set to manage and improve and develop
+            digital platforms.
           </div>
         </div>
       </div>

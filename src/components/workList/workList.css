@@ -1,0 +1,39 @@
+.wl {
+  padding: 50px 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.wl-text {
+  width: 65%;
+  position: relative;
+}
+
+.wl-title {
+  font-size: 50px;
+  font-weight: 600;
+}
+
+.wl-desc {
+  margin: 20px 0px;
+  padding-top: 20px;
+  font-size: 25px;
+  height: 50%;
+}
+
+.wl-list {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.wl-bg {
+  clip-path: polygon(63% 0, 100% 0%, 41% 100%, 0% 100%);
+  background-color: orangered;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}

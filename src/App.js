@@ -1,3 +1,4 @@
+import WorkList from "./components/workList/WorkList";
 import Intro from "./components/intro/Intro";
 import About from "./components/about/About";
 import "./App.css";
@@ -7,6 +8,7 @@ function App() {
     <div>
       <Intro />
       <About />
+      <WorkList />
     </div>
   );
 }
