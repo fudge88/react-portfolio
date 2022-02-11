@@ -3,6 +3,7 @@ import "./cards.css";
 function Cards({ img, link, live, repo }) {
   return (
     <div className="card">
+      <div className="overlay"></div>
       <div className="card-browser">
         <div className="card-circle"></div>
         <div className="card-circle"></div>

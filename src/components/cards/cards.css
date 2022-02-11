@@ -24,19 +24,21 @@
   background-color: white;
 }
 .btn-container {
-  transform: rotate(-90deg) translateX(-180px);
   position: absolute;
   display: inline;
   align-items: center;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
+
 .btn {
-  /* transform: rotate(-90deg) translateX(-180px); */
   position: relative;
-  top: 365px;
-  right: -85px;
   border: none;
   display: inline;
-  margin: 0 10px;
+  margin: 10px;
   text-align: center;
   cursor: pointer;
   text-transform: uppercase;
@@ -46,7 +48,7 @@
   font-weight: 700;
   font-size: 15px;
   background-color: #222;
-  padding: 10px 20px;
+  padding: 15px 30px;
   border-radius: 10px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
@@ -77,4 +79,31 @@
 
 .card-img {
   width: 100%;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(243, 239, 239, 0.596);
+}
+
+@media only screen and (max-width: 600px) {
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
 }
