@@ -1,5 +1,4 @@
-import FrontEndProjects from "./components/frontEndProjects/FrontEndProjects";
-import BackEndProjects from "./components/backEndProjects/BackEndProjects";
+import Projects from "./components/projects/Projects";
 import Contact from "./components/contact/Contact";
 import Intro from "./components/intro/Intro";
 import About from "./components/about/About";
@@ -10,8 +9,7 @@ function App() {
     <div>
       <Intro />
       <About />
-      <FrontEndProjects />
-      <BackEndProjects />
+      <Projects />
       <Contact />
     </div>
   );

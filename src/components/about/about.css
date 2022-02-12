@@ -41,14 +41,17 @@
   padding: 50px;
 }
 
+.about-title {
+  font-size: 80px;
+}
 .about-subtitle {
   padding-top: 20px;
-  font-size: 25px;
+  font-size: 20px;
   height: 50%;
 }
 
 .about-desc {
   padding-top: 20px;
-  font-size: 25px;
+  font-size: 20px;
   height: 50%;
 }
