@@ -9,16 +9,16 @@ function Contact() {
           <h1 className="contact-title">Lets discuss your project</h1>
           <div className="contact-info">
             <div className="info-item">
-              <b>Phone:</b>
+              <b>Phone:</b> 07507292214
             </div>
             <div className="info-item">
-              <b>Email:</b>
+              <b>Email:</b>f.akhlaq@outlook.com
             </div>
             <div className="info-item">
-              <b>GitHub:</b>
+              <b>GitHub:</b>github.com/fudge88
             </div>
             <div className="info-item">
-              <b>LinkedIn:</b>
+              <b>LinkedIn:</b>linkedin.com/in/f-akhlaq/
             </div>
           </div>
         </div>
