@@ -2,7 +2,7 @@
   position: relative;
   width: 30%;
   height: 20vh;
-  margin: 20px 10px;
+  margin: 50px 20px;
   border: 2px solid rgb(187, 186, 186);
   border-radius: 10px 10px 0px 0px;
   overflow: hidden;
@@ -80,6 +80,7 @@
 .card-img {
   width: 100%;
 }
+
 .overlay {
   position: absolute;
   top: 0;
@@ -87,6 +88,9 @@
   right: 0;
   bottom: 0;
   background-color: rgba(243, 239, 239, 0.596);
+}
+.card:hover .overlay {
+  background-color: rgba(8, 8, 8, 0.596);
 }
 
 @media only screen and (max-width: 600px) {

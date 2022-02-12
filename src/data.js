@@ -36,3 +36,21 @@ export const frontEnd = [
     repo: "https://github.com/fudge88/mvc-blog/tree/dev",
   },
 ];
+
+export const backEnd = [
+  {
+    id: "1",
+    img: "https://github.com/fudge88/ecommerce-backend/raw/dev/img/ecom.gif",
+    repo: "https://github.com/fudge88/ecommerce-backend/tree/dev",
+  },
+  {
+    id: "3",
+    img: "https://github.com/fudge88/team-profile-generator/raw/dev/dist/assets/questions.gif",
+    repo: "https://github.com/fudge88/team-profile-generator/tree/dev",
+  },
+  {
+    id: "3",
+    img: "https://github.com/fudge88/employee-tracker-sql/raw/dev/img/et-demo.gif",
+    repo: "https://github.com/fudge88/employee-tracker-sql/tree/dev",
+  },
+];
