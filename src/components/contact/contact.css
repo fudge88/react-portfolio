@@ -1,0 +1,11 @@
+.contact {
+  height: 100vh;
+  position: relative;
+}
+
+.contact-bg {
+  width: 20px;
+  height: 100%;
+  background-color: orangered;
+  position: absolute;
+}

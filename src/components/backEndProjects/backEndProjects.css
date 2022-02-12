@@ -33,9 +33,21 @@
 }
 
 .be-bg {
-  clip-path: polygon(0 0, 41% 0, 100% 100%, 57% 100%);
+  clip-path: inset(7% 4% 15% 49%);
   background-color: orangered;
   height: 100%;
   width: 100%;
   position: absolute;
+}
+
+.contact-wrapper {
+  padding: 50px;
+  display: flex;
+}
+
+.contact-left {
+  flex: 1;
+}
+.contact-right {
+  flex: 1;
 }
