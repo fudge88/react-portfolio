@@ -1,9 +1,10 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import "./contact.css";
 import emailjs from "@emailjs/browser";
 
 function Contact() {
   const formRef = useRef();
+  const [complete, setComplete] = useState(false);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -17,6 +18,7 @@ function Contact() {
       .then(
         (result) => {
           console.log(result.text);
+          setComplete(true);
         },
         (error) => {
           console.log(error.text);
@@ -60,6 +62,7 @@ function Contact() {
             <button className="btn">
               <span>Submit</span>
             </button>
+            {complete && <div>Thank you for getting in Touch!</div>}
           </form>
         </div>
       </div>
