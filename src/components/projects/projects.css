@@ -4,7 +4,7 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  /* height: 100vh; */
+  height: 100vh;
 }
 
 .project-text {
@@ -15,13 +15,10 @@
 .project-title {
   font-size: 50px;
   font-weight: 600;
-  font-size: 80px;
 }
 
 .project-desc {
   margin: 20px 0px;
-  font-size: 25px;
-  height: 50%;
 }
 
 .project-list {
@@ -37,4 +34,18 @@
   height: 100%;
   width: 100%;
   position: absolute;
+}
+
+@media screen and (max-width: 480px) {
+  .project {
+    padding: 10px;
+  }
+
+  .project-texts {
+    width: 100%;
+  }
+
+  .project-desc {
+    display: none;
+  }
 }

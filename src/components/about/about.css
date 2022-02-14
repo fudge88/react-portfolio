@@ -23,6 +23,7 @@
   left: 50px;
   background-color: orangered;
 }
+
 .about-card {
   width: 60%;
   height: 70vh;
@@ -37,21 +38,39 @@
   object-fit: cover;
 }
 
-.about-right {
-  padding: 50px;
+.about-title {
+  font-size: 400;
 }
 
-.about-title {
-  font-size: 80px;
-}
 .about-subtitle {
-  padding-top: 20px;
-  font-size: 20px;
-  height: 50%;
+  margin: 20px 0px;
 }
 
 .about-desc {
-  padding-top: 20px;
-  font-size: 20px;
-  height: 50%;
+  font-weight: 300;
+}
+
+@media screen and (max-width: 480px) {
+  .a {
+    flex-direction: column;
+    text-align: center;
+    margin-top: 50px;
+  }
+
+  .a-left {
+    width: 100%;
+  }
+
+  .a-card {
+    height: 30vh;
+  }
+
+  .a-card.bg,
+  .a-award {
+    display: none;
+  }
+
+  .a-right {
+    padding: 20px;
+  }
 }

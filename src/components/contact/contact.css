@@ -16,7 +16,8 @@
 }
 
 .contact-title {
-  font-size: 80px;
+  font-size: 60px;
+  width: 80%;
 }
 
 .contact-left {
@@ -35,12 +36,12 @@
   display: flex;
   align-items: center;
   margin: 50px 0px;
-  font-size: 20px;
+  font-weight: 300;
   width: 70%;
 }
 
 .contact-desc {
-  font-size: 20px;
+  font-weight: 200;
 }
 
 form {
@@ -53,17 +54,16 @@ input {
   border: none;
   border-bottom: 2px solid orangered;
   margin: 10px 0px;
-  font-size: 20px;
+  font-size: 14px;
   padding-left: 10px;
 }
 
 textarea {
-  font-family: inherit;
   width: 100%;
   border: none;
   border-bottom: 2px solid orangered;
   margin: 10px 0px;
-  font-size: 20px;
+  font-size: 14px;
   padding-left: 10px;
 }
 
@@ -108,4 +108,39 @@ textarea {
 .btn:hover:after {
   -webkit-transform: translateX(-9%) translateY(-25%) rotate(45deg);
   transform: translateX(-9%) translateY(-25%) rotate(45deg);
+}
+
+/* @media (max-width: 767.98px) { ... } */
+
+@media screen and (max-width: 767.98px) {
+  .contact-wrapper {
+    flex-direction: column;
+    padding: 0px 50px;
+  }
+
+  .contact-title {
+    font-size: 30px;
+  }
+
+  .contact-info-item {
+    margin: 20px 0px;
+    width: 100%;
+  }
+
+  .contact-desc {
+    display: none;
+  }
+
+  form {
+    margin-top: 0px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  input {
+    width: 35%;
+    height: 40px;
+    margin: 10px;
+    margin-left: 0;
+  }
 }
