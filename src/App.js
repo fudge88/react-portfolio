@@ -5,7 +5,6 @@ import About from "./components/about/About";
 import Toggle from "./components/toggle/toggle";
 import "./App.css";
 
-import "react-alice-carousel/lib/alice-carousel.css";
 import { useContext } from "react";
 import { modeContext } from "./context";
 

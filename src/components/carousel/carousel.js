@@ -1,32 +1,41 @@
 import React from "react";
-import AliceCarousel from "react-alice-carousel";
-import "react-alice-carousel/lib/alice-carousel.css";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Slider from "react-slick";
 
 import Cards from "../cards/frontEnd/Cards";
+
 import { frontEnd } from "../../Data";
 
-const itemsLength = Array.from({ length: 6 });
-
-const items = itemsLength.map((item, index) => {
-  const style = { width: 150 + index * 100 };
+export default function Carousel() {
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    arrows: true,
+    className: "slides",
+  };
   return (
-    <div className="project-list, item">
-      project 1
-      {/* {frontEnd.map((item) => (
-        <Cards
-          data-value={item.id}
-          img={item.img}
-          live={item.live}
-          repo={item.repo}
-        />
-      ))} */}
-      {/* {index + 1} */}
+    <div className="Carousel">
+      <Slider {...settings}>
+        {/* <div className="project-list"> */}
+        {frontEnd.map((item) => {
+          return (
+            <div className="project-list">
+              <Cards
+                key={item.id}
+                img={item.img}
+                live={item.live}
+                repo={item.repo}
+              />
+            </div>
+          );
+        })}
+        {/* </div> */}
+      </Slider>
     </div>
   );
-});
-
-const Carousel = () => (
-  <AliceCarousel autoWidth infinite mouseTracking items={items} />
-);
-
-export default Carousel;
+}

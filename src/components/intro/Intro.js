@@ -6,9 +6,9 @@ function Intro() {
     <div className="intro">
       <div className="intro-left">
         <div className="intro-left-wrapper">
-          <h3 className="intro-text">Hello! My name is</h3>
+          <h2 className="intro-text">Hello! My name is</h2>
           <h1 className="intro-name">Fahra Akhlaq</h1>
-          <div className="job-title-container">
+          <div className="job-title">
             <div className="job-title-wrapper">
               <div className="job-title-item">Full Stack Developer</div>
               <div className="job-title-item">Web Developer</div>
@@ -16,14 +16,14 @@ function Intro() {
             </div>
           </div>
           <div className="intro-desc">
-            I am a creative, and fresh thinking, with experience of managing
-            projects and a skill set to manage, improve and develop digital
-            platforms.
+            I am a creative, and a fresh thinking person! With years of
+            experience of managing projects and refining my skill set to manage,
+            improve and develop digital platforms.
           </div>
         </div>
       </div>
       <div className="intro-right">
-        <div className="intro-img-bg"></div>
+        <div className="intro-bg"></div>
         <img src={me} alt="" className="intro-img"></img>
       </div>
     </div>

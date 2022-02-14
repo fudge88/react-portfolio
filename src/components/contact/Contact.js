@@ -50,9 +50,9 @@ function Contact() {
           </div>
         </div>
         <div className="contact-right">
-          <p className="contact-desc">
+          <h2 className="contact-desc">
             Get in touch, and lets materialize your vision!
-          </p>
+          </h2>
           <form ref={formRef} onSubmit={handleSubmit}>
             <input
               style={{ backgroundColor: darkMode && "#333" }}

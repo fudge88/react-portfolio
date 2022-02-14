@@ -110,8 +110,6 @@ textarea {
   transform: translateX(-9%) translateY(-25%) rotate(45deg);
 }
 
-/* @media (max-width: 767.98px) { ... } */
-
 @media screen and (max-width: 767.98px) {
   .contact-wrapper {
     flex-direction: column;
@@ -142,5 +140,8 @@ textarea {
     height: 40px;
     margin: 10px;
     margin-left: 0;
+  }
+  .btn {
+    padding: 10px 25px;
   }
 }

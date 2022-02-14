@@ -1,7 +1,7 @@
 import Cards from "../cards/frontEnd/Cards";
 
 import "./projects.css";
-import { backEnd } from "../../Data";
+import { frontEnd, backEnd } from "../../Data";
 import Carousel from "../carousel/carousel";
 
 function Projects() {
@@ -10,21 +10,22 @@ function Projects() {
       <div className="project-bg"></div>
       <div className="project-text">
         <h1 className="project-title">Projects</h1>
-        <p className="project-desc">Front-End</p>
+        <h2 className="project-desc">Front-End</h2>
       </div>
-      <Carousel />
-      {/* <div className="project-list">
-        {frontEnd.map((item) => (
-          <Cards
-            key={item.id}
-            img={item.img}
-            live={item.live}
-            repo={item.repo}
-          />
-        ))}
-      </div> */}
+      <Carousel>
+        <div className="project-list">
+          {frontEnd.map((item) => (
+            <Cards
+              key={item.id}
+              img={item.img}
+              live={item.live}
+              repo={item.repo}
+            />
+          ))}
+        </div>
+      </Carousel>
       <div className="project-text">
-        <p className="project-desc">Back-End</p>
+        <h2 className="project-desc">Back-End</h2>
       </div>
       <div className="project-list">
         {backEnd.map((item) => (

@@ -51,26 +51,21 @@
 }
 
 @media screen and (max-width: 480px) {
-  .a {
+  .about {
     flex-direction: column;
     text-align: center;
     margin-top: 50px;
   }
 
-  .a-left {
+  .about-left {
     width: 100%;
   }
 
-  .a-card {
+  .about-card {
     height: 30vh;
   }
 
-  .a-card.bg,
-  .a-award {
-    display: none;
-  }
-
-  .a-right {
+  .about-right {
     padding: 20px;
   }
 }

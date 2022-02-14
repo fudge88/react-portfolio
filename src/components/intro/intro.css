@@ -13,8 +13,6 @@
 .intro-right {
   flex: 1;
   position: relative;
-  flex: 1;
-  position: relative;
 }
 
 .intro-left-wrapper {
@@ -34,7 +32,7 @@
   font-size: 60px;
 }
 
-.job-title-container {
+.job-title {
   height: 50px;
   overflow: hidden;
 }
@@ -75,7 +73,7 @@
   position: absolute;
 }
 
-.intro-img-bg {
+.intro-bg {
   clip-path: polygon(100% 0%, 75% 50%, 100% 100%, 25% 100%, 0% 50%, 25% 0%);
   background-color: orangered;
   height: 100%;
@@ -99,5 +97,8 @@
 
   .intro-desc {
     display: none;
+  }
+  .job-title-item {
+    justify-content: center;
   }
 }
