@@ -1,6 +1,28 @@
+import { useRef } from "react";
 import "./contact.css";
+import emailjs from "@emailjs/browser";
 
 function Contact() {
+  const formRef = useRef();
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    emailjs
+      .sendForm(
+        "service_t1poz6l",
+        "template_c7yvpie",
+        formRef.current,
+        "user_nSvDfzE3Zj0etYWKO8d8D"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+  };
   return (
     <div className="contact">
       <div className="contact-bg"></div>
@@ -26,15 +48,15 @@ function Contact() {
           <p className="contact-desc">
             Get in touch, and lets materialize your vision!
           </p>
-          <form>
-            <input type="text" placeholder="Name" name="userName"></input>
-            <input type="text" placeholder="Subject" name="userSubject"></input>
-            <input type="text" placeholder="Email" name="userEmail"></input>
-            <textarea
-              rows="5"
-              placeholder="Message"
-              name="userMessage"
-            ></textarea>
+          <form ref={formRef} onSubmit={handleSubmit}>
+            <input type="text" placeholder="Name" name="user_name"></input>
+            <input
+              type="text"
+              placeholder="Subject"
+              name="user_subject"
+            ></input>
+            <input type="text" placeholder="Email" name="user_email"></input>
+            <textarea rows="5" placeholder="Message" name="message"></textarea>
             <button className="btn">
               <span>Submit</span>
             </button>

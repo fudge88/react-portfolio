@@ -4,6 +4,8 @@ import Intro from "./components/intro/Intro";
 import About from "./components/about/About";
 import "./App.css";
 
+import "react-alice-carousel/lib/alice-carousel.css";
+
 function App() {
   return (
     <div>

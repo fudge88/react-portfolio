@@ -1,7 +1,8 @@
 import Cards from "../cards/frontEnd/Cards";
 
 import "./projects.css";
-import { frontEnd, backEnd } from "../../Data";
+import { backEnd } from "../../Data";
+import Carousel from "../carousel/carousel";
 
 function Projects() {
   return (
@@ -11,7 +12,8 @@ function Projects() {
         <h1 className="project-title">Projects</h1>
         <p className="project-desc">Front-End</p>
       </div>
-      <div className="project-list">
+      <Carousel />
+      {/* <div className="project-list">
         {frontEnd.map((item) => (
           <Cards
             key={item.id}
@@ -20,7 +22,7 @@ function Projects() {
             repo={item.repo}
           />
         ))}
-      </div>
+      </div> */}
       <div className="project-text">
         <p className="project-desc">Back-End</p>
       </div>
