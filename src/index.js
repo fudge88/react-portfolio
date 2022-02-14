@@ -1,8 +1,10 @@
 import ReactDOM from "react-dom";
 import App from "./App";
+import { ModeProvider } from "./context";
 
 ReactDOM.render(
-  <App />,
-
+  <ModeProvider>
+    <App />,
+  </ModeProvider>,
   document.getElementById("root")
 );
