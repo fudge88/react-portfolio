@@ -2,7 +2,7 @@ import Cards from "../cards/frontEnd/Cards";
 
 import "./projects.css";
 import { frontEnd, backEnd } from "../../Data";
-import Carousel from "../carousel/carousel";
+import Carousel from "../carousel/Carousel";
 
 function Projects() {
   return (

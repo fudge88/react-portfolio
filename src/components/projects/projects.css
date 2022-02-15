@@ -1,4 +1,4 @@
-.project {
+/* .project {
   padding: 50px 100px;
   display: flex;
   flex-direction: column;
@@ -48,4 +48,12 @@
   .project-desc {
     display: none;
   }
+} */
+
+.project-list {
+  width: 100%;
+  margin: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
