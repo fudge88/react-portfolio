@@ -1,34 +1,3 @@
-/* .project {
-  padding: 50px 100px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  height: 100vh;
-}
-
-.project-text {
-  width: 65%;
-  position: relative;
-}
-
-.project-title {
-  font-size: 50px;
-  font-weight: 600;
-}
-
-.project-desc {
-  margin: 20px 0px;
-}
-
-.project-list {
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-*/
-
 .project {
   padding: 50px 100px;
   align-items: center;
@@ -37,7 +6,6 @@
 }
 
 .project-text {
-  width: 65%;
   position: relative;
 }
 .project-desc {
@@ -59,10 +27,6 @@
 @media screen and (max-width: 480px) {
   .project {
     padding: 10px;
-  }
-
-  .project-texts {
-    width: 100%;
   }
 
   .project-desc {

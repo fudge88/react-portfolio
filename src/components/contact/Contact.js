@@ -32,60 +32,95 @@ function Contact() {
     <div className="contact">
       <div className="contact-bg"></div>
       <div className="contact-wrapper">
-        <div className="contact-left">
-          <h1 className="contact-title">Lets discuss your project</h1>
-          <div className="contact-info">
+        <h1 className="contact-title">Lets discuss your project</h1>
+        <h2 className="contact-desc">
+          Get in touch, and lets materialize your vision!
+        </h2>
+        <form ref={formRef} onSubmit={handleSubmit}>
+          <input
+            style={{ backgroundColor: darkMode && "#333" }}
+            type="text"
+            placeholder="Name"
+            name="user_name"
+          ></input>
+          <input
+            style={{ backgroundColor: darkMode && "#333" }}
+            type="text"
+            placeholder="Subject"
+            name="user_subject"
+          ></input>
+          <input
+            style={{ backgroundColor: darkMode && "#333" }}
+            type="text"
+            placeholder="Email"
+            name="user_email"
+          ></input>
+          <textarea
+            style={{
+              backgroundColor: darkMode && "#333",
+            }}
+            rows="5"
+            placeholder="Message"
+            name="message"
+          ></textarea>
+          <button className="btn">
+            <span>Submit</span>
+          </button>
+          {complete && <div>Thank you for getting in Touch!</div>}
+        </form>
+
+        {/* <div className="contact-info">
             <div className="info-item">
-              <b>Phone:</b> 07507292214
+              <b>Resume: &nbsp;</b> Download link
             </div>
             <div className="info-item">
-              <b>Email:</b>f.akhlaq@outlook.com
+              <b>Phone: &nbsp;</b> +447507292214
             </div>
             <div className="info-item">
-              <b>GitHub:</b>github.com/fudge88
+              <b>Email: &nbsp;</b> f.akhlaq@outlook.com
             </div>
             <div className="info-item">
-              <b>LinkedIn:</b>linkedin.com/in/f-akhlaq/
+              <b>GitHub: &nbsp;</b> github.com/fudge88
             </div>
-          </div>
-        </div>
-        <div className="contact-right">
-          <h2 className="contact-desc">
-            Get in touch, and lets materialize your vision!
-          </h2>
-          <form ref={formRef} onSubmit={handleSubmit}>
-            <input
-              style={{ backgroundColor: darkMode && "#333" }}
-              type="text"
-              placeholder="Name"
-              name="user_name"
-            ></input>
-            <input
-              style={{ backgroundColor: darkMode && "#333" }}
-              type="text"
-              placeholder="Subject"
-              name="user_subject"
-            ></input>
-            <input
-              style={{ backgroundColor: darkMode && "#333" }}
-              type="text"
-              placeholder="Email"
-              name="user_email"
-            ></input>
-            <textarea
-              style={{
-                backgroundColor: darkMode && "#333",
-              }}
-              rows="5"
-              placeholder="Message"
-              name="message"
-            ></textarea>
-            <button className="btn">
-              <span>Submit</span>
-            </button>
-            {complete && <div>Thank you for getting in Touch!</div>}
-          </form>
-        </div>
+            <div className="info-item">
+              <b>LinkedIn: &nbsp;</b> linkedin.com/in/f-akhlaq/
+            </div> */}
+
+        {/* <h2 className="contact-desc">
+          Get in touch, and lets materialize your vision!
+        </h2>
+        <form ref={formRef} onSubmit={handleSubmit}>
+          <input
+            style={{ backgroundColor: darkMode && "#333" }}
+            type="text"
+            placeholder="Name"
+            name="user_name"
+          ></input>
+          <input
+            style={{ backgroundColor: darkMode && "#333" }}
+            type="text"
+            placeholder="Subject"
+            name="user_subject"
+          ></input>
+          <input
+            style={{ backgroundColor: darkMode && "#333" }}
+            type="text"
+            placeholder="Email"
+            name="user_email"
+          ></input>
+          <textarea
+            style={{
+              backgroundColor: darkMode && "#333",
+            }}
+            rows="5"
+            placeholder="Message"
+            name="message"
+          ></textarea>
+          <button className="btn">
+            <span>Submit</span>
+          </button>
+          {complete && <div>Thank you for getting in Touch!</div>}
+        </form> */}
       </div>
     </div>
   );

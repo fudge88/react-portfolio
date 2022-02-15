@@ -94,7 +94,7 @@
 
 @media screen and (max-width: 480px) {
   .card {
-    width: 40%;
+    width: 90%;
     height: 20vh;
   }
   .btn {

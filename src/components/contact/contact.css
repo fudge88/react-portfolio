@@ -1,4 +1,4 @@
-.contact {
+/* .contact {
   height: 100vh;
   position: relative;
 }
@@ -11,6 +11,7 @@
 }
 
 .contact-wrapper {
+  margin-top: 50px;
   padding: 50px;
   display: flex;
 }
@@ -30,6 +31,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin: 50px;
 }
 
 .info-item {
@@ -38,6 +40,7 @@
   margin: 50px 0px;
   font-weight: 300;
   width: 70%;
+  color: orangered;
 }
 
 .contact-desc {
@@ -144,4 +147,7 @@ textarea {
   .btn {
     padding: 10px 25px;
   }
-}
+  .contact-right {
+    margin: 0;
+  }
+} */

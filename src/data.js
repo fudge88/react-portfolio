@@ -53,4 +53,9 @@ export const backEnd = [
     img: "https://github.com/fudge88/employee-tracker-sql/raw/dev/img/et-demo.gif",
     repo: "https://github.com/fudge88/employee-tracker-sql/tree/dev",
   },
+  {
+    id: "4",
+    img: "https://github.com/fudge88/social-network-backend/raw/dev/img/postman.gif",
+    repo: "https://github.com/fudge88/social-network-backend/tree/dev",
+  },
 ];
