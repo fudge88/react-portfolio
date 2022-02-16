@@ -10,6 +10,7 @@ import "./projects.css";
 
 function Projects() {
   const sliderSettings = {
+    arrows: false,
     slidesToShow: 3,
     infinite: true,
     slidesToShow: 3,

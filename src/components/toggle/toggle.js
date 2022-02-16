@@ -7,6 +7,7 @@ import { modeContext } from "../../context";
 
 function Toggle() {
   const mode = useContext(modeContext);
+  const darkMode = mode.state.darkMode;
 
   const handleClick = () => {
     mode.dispatch({ type: "TOGGLE" });
@@ -18,7 +19,10 @@ function Toggle() {
       <div
         className="toggle-button"
         onClick={handleClick}
-        style={{ left: mode.state.darkMode ? 0 : 25 }}
+        style={{
+          left: mode.state.darkMode ? -1 : 25,
+          backgroundColor: darkMode && "#ff4500",
+        }}
       ></div>
     </div>
   );

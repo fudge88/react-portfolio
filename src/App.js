@@ -7,6 +7,8 @@ import "./App.css";
 
 import { useContext } from "react";
 import { modeContext } from "./context";
+import Nav from "./components/nav/Nav";
+import Footer from "./components/footer/Footer";
 
 function App() {
   const mode = useContext(modeContext);
@@ -18,11 +20,13 @@ function App() {
         color: darkMode && "white",
       }}
     >
+      <Nav />
       <Toggle />
       <Intro />
       <About />
       <Projects />
       <Contact />
+      <Footer />
     </div>
   );
 }
