@@ -2,7 +2,8 @@
   padding: 40px 0;
   color: #4b4c4d;
   position: relative;
-  bottom: -50px;
+  /* bottom: -50px; */
+  height: 20vh;
 }
 
 .footer-basic ul {

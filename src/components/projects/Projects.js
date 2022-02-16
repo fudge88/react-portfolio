@@ -41,6 +41,8 @@ function Projects() {
       <div className="project-bg"></div>
       <div className="project-text">
         <h1 className="project-title">Projects</h1>
+        <h3 className="project-desktop">Hover to pause</h3>
+        <h3 className="project-mobile">Swipe to view more projects</h3>
         <h2 className="project-desc">Front-End</h2>
       </div>
       <div className="carousel">

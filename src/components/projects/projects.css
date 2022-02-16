@@ -24,6 +24,11 @@
   position: absolute;
 }
 
+.project-mobile,
+.project-desktop {
+  color: #363535;
+}
+
 @media screen and (max-width: 480px) {
   .project {
     padding: 10px;
@@ -40,4 +45,16 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+@media screen and (max-width: 767.98px) {
+  .project-desktop {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 767.99px) {
+  .project-mobile {
+    display: none;
+  }
 }

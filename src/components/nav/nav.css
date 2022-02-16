@@ -1,0 +1,19 @@
+.header {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  padding: 20px 0;
+  position: fixed;
+  background-color: aqua;
+  top: 0;
+}
+
+li {
+  cursor: pointer;
+}
+
+@media screen and (max-width: 767.98px) {
+}
+
+@media screen and (min-width: 767.99px) {
+}
