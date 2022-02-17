@@ -40,7 +40,7 @@ function Projects() {
   };
 
   return (
-    <div className="project">
+    <div className="project" id="projects">
       <div className="project-bg"></div>
       <div className="project-text">
         <h1 className="project-title">Projects</h1>
