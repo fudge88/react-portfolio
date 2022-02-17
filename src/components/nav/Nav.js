@@ -24,6 +24,19 @@ function Nav() {
       <a className="nav-item">
         <Link
           activeClass="active"
+          to="home"
+          spy={true}
+          smooth={true}
+          offset={-100}
+          duration={500}
+          S
+        >
+          Introduction
+        </Link>
+      </a>
+      <a className="nav-item">
+        <Link
+          activeClass="active"
           to="about"
           spy={true}
           smooth={true}
