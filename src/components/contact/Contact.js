@@ -30,13 +30,17 @@ function Contact() {
   };
   return (
     <div className="contact" id="contact">
-      <div className="contact-bg"></div>
+      <div className="contact-heading">
+        <h1>Contact Me</h1>
+        <h3>Get in touch, and lets materialize your vision!</h3>
+      </div>
       <div className="contact-wrapper">
         <div className="contact-left">
           <h1 className="contact-title">Lets discuss your project</h1>
-          <h2 className="contact-desc">
-            Get in touch, and lets materialize your vision!
-          </h2>
+          <p className="social-sub-heading">
+            I aim to respond to all queries within 48hours. In the meantime,
+            have a great day!
+          </p>
           <form ref={formRef} onSubmit={handleSubmit}>
             <input
               style={{
@@ -86,8 +90,11 @@ function Contact() {
         </div>
         <div className="contact-right">
           <div className="heading-right">
-            <h2 className="">Prefer social media?</h2>
-            <h3 className="">No problem, click on the links below!</h3>
+            <h2 className="social-title">Prefer social media?</h2>
+            <br></br>
+            <h3 className="social-sub-heading">
+              No problem, click on the links below!
+            </h3>
           </div>
           <div className="info-link-container">
             <a

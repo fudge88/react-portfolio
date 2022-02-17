@@ -2,30 +2,17 @@
   height: 100vh;
   position: relative;
 }
-
-.contact-bg {
-  clip-path: polygon(
-    0% 0%,
-    100% 0%,
-    100% 75%,
-    75% 75%,
-    75% 100%,
-    50% 75%,
-    0% 75%
-  );
-  width: 50%;
-  height: 90%;
-  background-color: orangered;
-  position: absolute;
-  top: 50px;
+.contact-heading {
+  padding: 2rem;
+  margin: 2rem;
 }
-
 .contact-wrapper {
-  /* margin-top: 50px; */
+  width: 90%;
+  margin: auto;
   padding: 50px;
   display: flex;
-  position: relative;
-  top: 80px;
+  background-color: orangered;
+  border-radius: 20px;
 }
 
 .contact-title {
@@ -44,10 +31,6 @@
   align-items: center;
   justify-content: center;
   margin: 50px;
-}
-
-.contact-desc {
-  font-weight: 200;
 }
 
 form {
@@ -132,9 +115,8 @@ textarea {
 
 .info-link-container {
   background-color: #363535;
-  padding: 50px;
+  padding: 30px;
   border-radius: 20px;
-  color: orangered;
   width: 80%;
 }
 
@@ -145,6 +127,10 @@ textarea {
   font-weight: 300;
   font-size: 25px;
   color: orangered;
+}
+
+.social-sub-heading {
+  font-size: 20px;
 }
 
 a.contact-info-item {
@@ -159,7 +145,6 @@ a.contact-info-item:hover {
 
 @media screen and (max-width: 767.98px) {
   .contact-wrapper {
-    flex-direction: column;
     padding: 0px 50px;
   }
 
@@ -174,10 +159,6 @@ a.contact-info-item:hover {
 
   .btn {
     padding: 10px 25px;
-  }
-
-  .contact-right {
-    margin: 0;
   }
 
   .contact-bg {
@@ -197,29 +178,35 @@ a.contact-info-item:hover {
   .info-link-container {
     padding: 20px;
   }
+
+  .contact-title,
+  .heading-right {
+    padding: 10px;
+  }
+
+  .contact-wrapper,
+  .contact-heading {
+    text-align: center;
+  }
 }
 
 @media screen and (max-width: 952.5px) {
-  h2.contact-desc {
-    display: none;
-  }
-
   .contact-wrapper {
+    flex-direction: column;
     margin-top: 0px;
   }
 
   .contact-title {
     font-size: 30px;
-    margin-top: 0px;
+    margin-top: 20px;
     margin-bottom: 0px;
-  }
-  .heading-right {
-    display: none;
   }
 
   .info-link-container {
-    width: 90%;
-    margin-top: 150px;
+    width: 100%;
     margin-bottom: 50px;
+  }
+  .contact-right {
+    margin: 0;
   }
 }
