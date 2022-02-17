@@ -16,14 +16,6 @@
   font-weight: 600;
 }
 
-.project-bg {
-  clip-path: polygon(63% 0, 100% 0%, 41% 100%, 0% 100%);
-  background-color: orangered;
-  height: 100%;
-  width: 100%;
-  position: absolute;
-}
-
 .project-mobile,
 .project-desktop {
   color: #363535;

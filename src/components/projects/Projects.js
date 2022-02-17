@@ -2,6 +2,7 @@ import React from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
+import { useMediaQuery } from "react-responsive";
 
 import { frontEnd, backEnd } from "../../Data";
 import Cards from "../cards/Cards";
@@ -9,31 +10,33 @@ import Cards from "../cards/Cards";
 import "./projects.css";
 
 function Projects() {
+  const isMobile = useMediaQuery({
+    query: "(max-width: 767px)",
+  });
+
   const sliderSettings = {
-    arrows: false,
-    slidesToShow: 3,
+    arrows: [isMobile ? true : false],
+    slidesToShow: [isMobile ? 1 : 3],
     infinite: true,
-    slidesToShow: 3,
+    slidesToShow: [isMobile ? 1 : 3],
     slidesToScroll: 1,
-    autoplay: true,
-    speed: 5000,
-    autoplaySpeed: 5000,
+
     cssEase: "linear",
     pauseOnHover: true,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 2,
-        },
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 1,
-        },
-      },
-    ],
+    // responsive: [
+    //   {
+    //     breakpoint: 1024,
+    //     settings: {
+    //       slidesToShow: 2,
+    //     },
+    //   },
+    //   {
+    //     breakpoint: 600,
+    //     settings: {
+    //       slidesToShow: 1,
+    //     },
+    //   },
+    // ],
   };
 
   return (
