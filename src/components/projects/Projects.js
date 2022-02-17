@@ -2,8 +2,9 @@ import React from "react";
 import Box from "@mui/material/Box";
 import ImageList from "@mui/material/ImageList";
 import ImageListItem from "@mui/material/ImageListItem";
+import ImageListItemBar from "@mui/material/ImageListItemBar";
 
-import { frontEnd, backEnd } from "../../Data";
+import { projectData } from "../../Data";
 
 import "./projects.css";
 
@@ -11,8 +12,8 @@ function Projects() {
   return (
     <div>
       <Box sx={{ width: "100%" }}>
-        <ImageList variant="masonry" cols={5} gap={8}>
-          {frontEnd.map((item) => (
+        <ImageList variant="masonry" cols={3} gap={8}>
+          {projectData.map((item) => (
             <ImageListItem key={item.img}>
               <img
                 src={`${item.img}?w=248&fit=crop&auto=format`}
@@ -20,6 +21,7 @@ function Projects() {
                 alt={item.title}
                 loading="lazy"
               />
+              <ImageListItemBar position="below" title={item.repo} />
             </ImageListItem>
           ))}
         </ImageList>

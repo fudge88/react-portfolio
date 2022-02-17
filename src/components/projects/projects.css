@@ -50,3 +50,12 @@
     display: none;
   }
 } */
+
+.css-10riir9-MuiImageList-root {
+  column-count: 4;
+  column-gap: 8px;
+  margin: 3rem;
+  background-color: #363535;
+  padding: 4rem;
+  border-radius: 30px;
+}
