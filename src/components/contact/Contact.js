@@ -11,6 +11,7 @@ function Contact() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    
     emailjs
       .sendForm(
         "service_t1poz6l",
