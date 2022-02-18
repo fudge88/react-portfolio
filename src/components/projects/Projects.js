@@ -5,7 +5,7 @@ import ImageListItemBar from "@mui/material/ImageListItemBar";
 import IconButton from "@mui/material/IconButton";
 import StarBorderIcon from "@mui/icons-material/StarBorder";
 
-import { projectData } from "../../Data";
+import { projectData } from "../../data";
 
 import "./projects.css";
 

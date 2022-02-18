@@ -1,4 +1,4 @@
-export const frontEnd = [
+export const projectData = [
   {
     id: "1",
     img: "https://github.com/fudge88/foodtopia/raw/main/assets/images/wireframes/index-ss.png",
@@ -35,9 +35,6 @@ export const frontEnd = [
     live: "https://mvc-trekking-blog.herokuapp.com/",
     repo: "https://github.com/fudge88/mvc-blog/tree/dev",
   },
-];
-
-export const backEnd = [
   {
     id: "1",
     img: "https://github.com/fudge88/ecommerce-backend/raw/dev/img/ecom.gif",
