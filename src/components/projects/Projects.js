@@ -1,71 +1,89 @@
-import React from "react";
-import ImageList from "@mui/material/ImageList";
-import ImageListItem from "@mui/material/ImageListItem";
-import ImageListItemBar from "@mui/material/ImageListItemBar";
-import IconButton from "@mui/material/IconButton";
-import StarBorderIcon from "@mui/icons-material/StarBorder";
+import * as React from "react";
+import Card from "@mui/material/Card";
+import CardActions from "@mui/material/CardActions";
+import CardContent from "@mui/material/CardContent";
+import CardMedia from "@mui/material/CardMedia";
+import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
+import Grid from "@mui/material/Grid";
+import Container from "@mui/material/Container";
+import { useMediaQuery } from "react-responsive";
 
 import { projectData } from "../../data";
 
-import "./projects.css";
+export default function Projects() {
+  const isMobile = useMediaQuery({
+    query: "(max-width: 899px)",
+  });
 
-function srcset(image, width, height, rows = 1, cols = 1) {
-  return {
-    src: `${image}?w=${width * cols}&h=${height * rows}&fit=crop&auto=format`,
-    srcSet: `${image}?w=${width * cols}&h=${
-      height * rows
-    }&fit=crop&auto=format&dpr=2 2x`,
-  };
-}
-
-function Projects() {
   return (
-    <div>
-      <h1 className="project-title">Projects</h1>
-      <div className="project-container">
-        <ImageList
-          sx={{
-            width: "100%",
-          }}
-          rowHeight={300}
-          gap={6}
-        >
-          {projectData.map((item) => {
-            const cols = item.featured ? 2 : 1;
-            git;
-            const rows = item.featured ? 2 : 1;
-
-            return (
-              <ImageListItem key={item.img} cols={cols} rows={rows}>
-                <img
-                  {...srcset(item.img, 250, 200, rows, cols)}
-                  alt={item.title}
-                  loading="lazy"
-                />
-                <ImageListItemBar
+    <Container>
+      <Grid
+        container
+        spacing={2}
+        sx={
+          isMobile
+            ? {}
+            : {
+                border: "solid 20px #363535",
+                padding: "2rem",
+                borderRadius: "30px",
+                justifyContent: "center",
+              }
+        }
+      >
+        {projectData.map((item) => {
+          return (
+            <Grid
+              item
+              md={4}
+              sm={12}
+              xs={12}
+              key={item.id}
+              sx={{
+                display: "flex",
+                justifyContent: "center",
+              }}
+            >
+              <Card sx={{ width: isMobile ? "auto" : 345 }}>
+                <CardMedia
+                  component="img"
+                  alt="green iguana"
+                  height="200"
+                  image={item.img}
                   sx={{
-                    background:
-                      "linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, " +
-                      "rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%)",
+                    width: "100%",
+                    objectFit: "contain",
                   }}
-                  title={item.title}
-                  position="top"
-                  actionIcon={
-                    <IconButton
-                      sx={{ color: "white" }}
-                      aria-label={`star ${item.title}`}
-                    >
-                      <StarBorderIcon />
-                    </IconButton>
-                  }
-                  actionPosition="left"
                 />
-              </ImageListItem>
-            );
-          })}
-        </ImageList>
-      </div>
-    </div>
+                <CardContent>
+                  <Typography gutterBottom variant="h5" component="div">
+                    {item.title}
+                  </Typography>
+                </CardContent>
+                <CardActions>
+                  <Button
+                    size="small"
+                    href={item.live}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Live Url
+                  </Button>
+                  <Button
+                    size="small"
+                    href={item.repo}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Repo Url
+                  </Button>
+                </CardActions>
+              </Card>
+            </Grid>
+          );
+        })}
+      </Grid>
+    </Container>
   );
 }
-export default Projects;

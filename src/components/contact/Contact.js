@@ -5,30 +5,49 @@ import { modeContext } from "../../context";
 
 function Contact() {
   const formRef = useRef();
-  const [complete, setComplete] = useState(false);
   const mode = useContext(modeContext);
+  const [complete, setComplete] = useState(false);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [subject, setSubject] = useState("");
+  const [message, setMessage] = useState("");
+
   const darkMode = mode.state.darkMode;
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    
-    emailjs
-      .sendForm(
-        "service_t1poz6l",
-        "template_c7yvpie",
-        formRef.current,
-        "user_nSvDfzE3Zj0etYWKO8d8D"
-      )
-      .then(
-        (result) => {
-          console.log(result.text);
-          setComplete(true);
-        },
-        (error) => {
-          console.log(error.text);
-        }
-      );
+
+    const isValidEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(
+      email
+    );
+
+    if (name && email && subject && message && isValidEmail) {
+      emailjs
+        .sendForm(
+          "service_t1poz6l",
+          "template_c7yvpie",
+          formRef.current,
+          "user_nSvDfzE3Zj0etYWKO8d8D"
+        )
+        .then(
+          () => {
+            setName("");
+            setEmail("");
+            setSubject("");
+            setMessage("");
+            setComplete(true);
+          },
+          (error) => {
+            console.log(error.text);
+          }
+        );
+    } else {
+      console.log("handle error here and render");
+    }
   };
+
+  console.log("message", message);
+
   return (
     <div className="contact" id="contact">
       <div className="contact-heading">
@@ -51,6 +70,10 @@ function Contact() {
               type="text"
               placeholder="Name"
               name="user_name"
+              value={name}
+              onChange={(event) => {
+                setName(event.target.value);
+              }}
             ></input>
             <input
               style={{
@@ -60,6 +83,10 @@ function Contact() {
               type="text"
               placeholder="Subject"
               name="user_subject"
+              value={subject}
+              onChange={(event) => {
+                setSubject(event.target.value);
+              }}
             ></input>
             <input
               style={{
@@ -69,6 +96,10 @@ function Contact() {
               type="text"
               placeholder="Email"
               name="user_email"
+              value={email}
+              onChange={(event) => {
+                setEmail(event.target.value);
+              }}
             ></input>
             <textarea
               style={{
@@ -78,7 +109,13 @@ function Contact() {
               rows="5"
               placeholder="Message"
               name="message"
-            ></textarea>
+              onChange={(event) => {
+                setMessage(event.target.value);
+              }}
+              value={message}
+            >
+              {message}
+            </textarea>
             <button className="btn">
               <span>Submit</span>
             </button>
