@@ -5,6 +5,7 @@
 .contact-heading {
   padding: 2rem;
   margin: 2rem;
+  text-align: center;
 }
 .contact-wrapper {
   width: 90%;
@@ -184,8 +185,7 @@ a.contact-info-item:hover {
     padding: 10px;
   }
 
-  .contact-wrapper,
-  .contact-heading {
+  .contact-wrapper {
     text-align: center;
   }
 }

@@ -1,61 +1,12 @@
-/* .project {
-  padding: 50px 100px;
-  align-items: center;
-  text-align: center;
-  height: 100vh;
+.project-container {
+  width: 90%;
+  margin: auto;
+  background-color: #363535;
+  padding: 2rem;
+  border-radius: 30px;
 }
 
-.project-text {
-  position: relative;
-}
-.project-desc {
-  margin: 20px 0px;
-}
 .project-title {
   font-size: 50px;
   font-weight: 600;
-}
-
-.project-mobile,
-.project-desktop {
-  color: #363535;
-}
-
-@media screen and (max-width: 480px) {
-  .project {
-    padding: 10px;
-  }
-
-  .project-desc {
-    display: none;
-  }
-}
-
-.project-list {
-  width: 100%;
-  margin: 20px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-@media screen and (max-width: 767.98px) {
-  .project-desktop {
-    display: none;
-  }
-}
-
-@media screen and (min-width: 767.99px) {
-  .project-mobile {
-    display: none;
-  }
-} */
-
-.css-10riir9-MuiImageList-root {
-  column-count: 4;
-  column-gap: 8px;
-  margin: 3rem;
-  background-color: #363535;
-  padding: 4rem;
-  border-radius: 30px;
 }

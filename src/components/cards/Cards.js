@@ -10,12 +10,12 @@ function Cards({ img, live, repo }) {
         <div className="card-circle"></div>
       </div>
       <div className="btn-container">
-        <button href={live} target="_blank" className="btn">
+        <a href={live} target="_blank" className="btn">
           <span>Live</span>
-        </button>
-        <button href={repo} target="_blank" className="btn">
+        </a>
+        <a href={repo} target="_blank" className="btn">
           <span>Repo</span>
-        </button>
+        </a>
       </div>
       <img src={img} alt="card img" className="card-img"></img>
     </div>
