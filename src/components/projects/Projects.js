@@ -9,7 +9,7 @@ import Grid from "@mui/material/Grid";
 import Container from "@mui/material/Container";
 import { useMediaQuery } from "react-responsive";
 
-import { projectData } from "../../data";
+import { frontEnd } from "../../data";
 
 export default function Projects() {
   const isMobile = useMediaQuery({
@@ -32,7 +32,7 @@ export default function Projects() {
               }
         }
       >
-        {projectData.map((item) => {
+        {frontEnd.map((item) => {
           return (
             <Grid
               item
