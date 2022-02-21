@@ -14,14 +14,17 @@ function Contact() {
 
   const darkMode = mode.state.darkMode;
 
+  const [validateName, setValidateName] = useState({});
+  const [validateEmail, setValidateEmail] = useState({});
+  const [validateSubject, setValidateSubject] = useState({});
+  const [validateMessage, setValidateMessage] = useState({});
+
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    const isValidEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(
-      email
-    );
+    const isValid = formValidation();
 
-    if (name && email && subject && message && isValidEmail) {
+    if (isValid) {
       emailjs
         .sendForm(
           "service_t1poz6l",
@@ -46,7 +49,42 @@ function Contact() {
     }
   };
 
-  console.log("message", message);
+  const formValidation = () => {
+    const validateName = {};
+    const validateEmail = {};
+    const validateSubject = {};
+    const validateMessage = {};
+    let isValid = true;
+
+    if (!name.trim()) {
+      validateName.noName = "Name is required";
+      isValid = false;
+    }
+
+    const isValidEmail =
+      "/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:.[a-zA-Z0-9-]+)*$/";
+
+    if (email.match(isValidEmail) || !email.trim()) {
+      validateEmail.incorrectEmail = "Please input a valid email address";
+      isValid = false;
+    }
+
+    if (!subject.trim()) {
+      validateSubject.noSubject = "Subject is required";
+      isValid = false;
+    }
+
+    if (!message.trim()) {
+      validateMessage.noMessage = "Message is required";
+      isValid = false;
+    }
+
+    setValidateName(validateName);
+    setValidateEmail(validateEmail);
+    setValidateSubject(validateSubject);
+    setValidateMessage(validateMessage);
+    return isValid;
+  };
 
   return (
     <div className="contact" id="contact">
@@ -75,6 +113,9 @@ function Contact() {
                 setName(event.target.value);
               }}
             ></input>
+            {Object.keys(validateName).map((key) => {
+              return <div>{validateName[key]}</div>;
+            })}
             <input
               style={{
                 backgroundColor: darkMode && "#333",
@@ -88,6 +129,10 @@ function Contact() {
                 setSubject(event.target.value);
               }}
             ></input>
+            {Object.keys(validateSubject).map((key) => {
+              return <div>{validateSubject[key]}</div>;
+            })}
+
             <input
               style={{
                 backgroundColor: darkMode && "#333",
@@ -101,6 +146,10 @@ function Contact() {
                 setEmail(event.target.value);
               }}
             ></input>
+            {Object.keys(validateEmail).map((key) => {
+              return <div>{validateEmail[key]}</div>;
+            })}
+
             <textarea
               style={{
                 backgroundColor: darkMode && "#333",
@@ -116,6 +165,9 @@ function Contact() {
             >
               {message}
             </textarea>
+            {Object.keys(validateMessage).map((key) => {
+              return <div>{validateMessage[key]}</div>;
+            })}
             <button className="btn">
               <span>Submit</span>
             </button>
@@ -151,6 +203,7 @@ function Contact() {
               className="contact-info-item"
               href="https://github.com/fudge88"
               target="_blank"
+              rel="noreferrer"
             >
               <i class="icon ion-social-github"></i>&nbsp; Visit my Github
             </a>
@@ -158,6 +211,7 @@ function Contact() {
               className="contact-info-item"
               href="https://www.linkedin.com/in/f-akhlaq/"
               target="_blank"
+              rel="noreferrer"
             >
               <i class="icon ion-social-linkedin"></i>&nbsp; Visit my LinkedIn
             </a>
