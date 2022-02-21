@@ -9,7 +9,8 @@ import Grid from "@mui/material/Grid";
 import Container from "@mui/material/Container";
 import { useMediaQuery } from "react-responsive";
 
-import { frontEnd } from "../../data";
+import { backEnd } from "../../data";
+import "./backendProject.css";
 
 export default function Projects() {
   const isMobile = useMediaQuery({
@@ -18,6 +19,19 @@ export default function Projects() {
 
   return (
     <Container>
+      <h1 className="backend-project-title">Back End Projects</h1>
+      <div className="backend-project-text">
+        <p>
+          The back-end, also called the server side, consists of the server
+          which provides data on request, the application which channels it, and
+          the database which organizes the information.
+        </p>
+        <p>
+          The projects below ranged from using a combination of technologies and
+          frameworks such as JavaScript, Inquirer, SQL, NoSQL, Sequelize,
+          Express, and Node.
+        </p>
+      </div>
       <Grid
         container
         spacing={2}
@@ -32,7 +46,7 @@ export default function Projects() {
               }
         }
       >
-        {frontEnd.map((item) => {
+        {backEnd.map((item) => {
           return (
             <Grid
               item
@@ -57,26 +71,50 @@ export default function Projects() {
                   }}
                 />
                 <CardContent>
-                  <Typography gutterBottom variant="h5" component="div">
+                  <Typography
+                    gutterBottom
+                    variant="h6"
+                    component="div"
+                    sx={{
+                      fontWeight: "700",
+                      textTransform: "uppercase",
+                      textAlign: "center",
+                    }}
+                  >
                     {item.title}
                   </Typography>
                 </CardContent>
-                <CardActions>
+                <CardActions
+                  sx={{
+                    display: "flex",
+                    justifyContent: "center",
+                  }}
+                >
                   <Button
                     size="small"
                     href={item.live}
                     target="_blank"
                     rel="noreferrer"
+                    sx={{
+                      color: "#ff4500",
+                      fontWeight: "700",
+                    }}
+                    className="btn-text"
                   >
-                    Live Url
+                    Go to Website
                   </Button>
                   <Button
                     size="small"
                     href={item.repo}
                     target="_blank"
                     rel="noreferrer"
+                    sx={{
+                      color: "#000",
+                      fontWeight: "700",
+                    }}
+                    className="btn-text"
                   >
-                    Repo Url
+                    See the Code
                   </Button>
                 </CardActions>
               </Card>

@@ -1,0 +1,38 @@
+.project-container {
+  width: 90%;
+  margin: auto;
+  background-color: #363535;
+  padding: 2rem;
+  border-radius: 30px;
+}
+
+.backend-project-title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 600;
+  padding-top: 2.5rem;
+  /* margin: 1.5rem; */
+}
+
+.btn-text:hover {
+  transform: scale(1.1);
+  color: orangered;
+  font-weight: 900;
+}
+
+.backend-project-text {
+  text-align: center;
+  padding: 1rem;
+}
+
+@media screen and (max-width: 480px) {
+  .backend-project-title {
+    text-align: center;
+  }
+  .backend-project-text {
+    display: none;
+  }
+  .backend-project-title {
+    margin-top: 2rem;
+  }
+}

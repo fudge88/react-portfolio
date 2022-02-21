@@ -14,7 +14,7 @@ function Nav() {
       document.getElementById("navbar").style.top = "0";
     } else {
       document.getElementById("navbar").style.top = [
-        isMobile ? "-230px" : "-100px",
+        isMobile ? "-300px" : "-100px",
       ];
     }
     prevScrollPosition = currentScrollPosition;

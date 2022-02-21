@@ -1,4 +1,5 @@
-import Projects from "./components/projects/Projects";
+import FrontendProject from "./components/FrontendProject/FrontendProject";
+import BackendProject from "./components/BackendProject/BackendProject";
 import Contact from "./components/contact/Contact";
 import Intro from "./components/intro/Intro";
 import About from "./components/about/About";
@@ -24,7 +25,8 @@ function App() {
       <Toggle />
       <Intro />
       <About />
-      <Projects />
+      <FrontendProject />
+      <BackendProject />
       <Contact />
       <Footer />
     </div>
