@@ -62,7 +62,11 @@ export default function Projects() {
                 justifyContent: "center",
               }}
             >
-              <Card sx={{ width: isMobile ? "auto" : 345 }}>
+              <Card
+                sx={{
+                  width: isMobile ? "auto" : 345,
+                }}
+              >
                 <CardMedia
                   component="img"
                   alt="green iguana"
