@@ -64,19 +64,36 @@ function Contact() {
     const isValidEmail =
       "/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:.[a-zA-Z0-9-]+)*$/";
 
-    if (email.match(isValidEmail) || !email.trim()) {
+    if (!email) {
+      validateEmail.noEmail = "Email is required";
+      isValid = false;
+    } else if (!email.match(isValidEmail)) {
       validateEmail.incorrectEmail = "Please input a valid email address";
       isValid = false;
+    } else {
+      isValid = true;
     }
 
     if (!subject.trim()) {
       validateSubject.noSubject = "Subject is required";
       isValid = false;
+    } else {
+      isValid = true;
+    }
+
+    if (message.length < 20) {
+      validateMessage.messageShort =
+        "Please give a short description of your project";
+      isValid = false;
+    } else {
+      isValid = true;
     }
 
     if (!message.trim()) {
       validateMessage.noMessage = "Message is required";
       isValid = false;
+    } else {
+      isValid = true;
     }
 
     setValidateName(validateName);
