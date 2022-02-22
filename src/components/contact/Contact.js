@@ -23,7 +23,7 @@ function Contact() {
     event.preventDefault();
 
     const isValid = formValidation();
-
+    console.log(isValid);
     if (isValid) {
       emailjs
         .sendForm(
