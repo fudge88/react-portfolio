@@ -1,4 +1,4 @@
-import { useContext, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import "./contact.css";
 import emailjs from "@emailjs/browser";
 import { modeContext } from "../../context";
@@ -11,42 +11,67 @@ function Contact() {
   const [email, setEmail] = useState("");
   const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
+  const [formErrors, setFormErrors] = useState({});
 
   const darkMode = mode.state.darkMode;
+
+  useEffect(async () => {
+    if (Object.keys(formErrors).length === 0) {
+      await emailjs.sendForm(
+        "service_t1poz6l",
+        "template_c7yvpie",
+        formRef.current,
+        "user_nSvDfzE3Zj0etYWKO8d8D"
+      );
+      setName("");
+      setEmail("");
+      setSubject("");
+      setMessage("");
+      setComplete(true);
+    } else {
+      console.log("handle error here and render");
+    }
+  }, [formErrors]);
 
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    const isValidEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(
-      email
-    );
-
-    if (name && email && subject && message && isValidEmail) {
-      emailjs
-        .sendForm(
-          "service_t1poz6l",
-          "template_c7yvpie",
-          formRef.current,
-          "user_nSvDfzE3Zj0etYWKO8d8D"
-        )
-        .then(
-          () => {
-            setName("");
-            setEmail("");
-            setSubject("");
-            setMessage("");
-            setComplete(true);
-          },
-          (error) => {
-            console.log(error.text);
-          }
-        );
-    } else {
-      console.log("handle error here and render");
-    }
+    formValidation();
   };
 
-  console.log("message", message);
+  const formValidation = () => {
+    const emailRegex = new RegExp(
+      /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:.[a-zA-Z0-9-]+)*$/
+    );
+
+    const errors = {};
+
+    if (!name) {
+      errors.name = "Name is required";
+    }
+
+    if (!email) {
+      errors.email = "Email is required";
+    }
+
+    if (email && !emailRegex.test(email)) {
+      errors.email = "Please input a valid email address";
+    }
+
+    if (!subject) {
+      errors.subject = "Subject is required";
+    }
+
+    if (!message) {
+      errors.message = "Message is required";
+    }
+
+    if (message && message.length < 20) {
+      errors.message = "Please give a short description of your project";
+    }
+
+    setFormErrors(errors);
+  };
 
   return (
     <div className="contact" id="contact">
@@ -72,9 +97,10 @@ function Contact() {
               name="user_name"
               value={name}
               onChange={(event) => {
-                setName(event.target.value);
+                setName(event.target.value.trim());
               }}
             ></input>
+            {formErrors.name && <div>{formErrors.name}</div>}
             <input
               style={{
                 backgroundColor: darkMode && "#333",
@@ -85,9 +111,10 @@ function Contact() {
               name="user_subject"
               value={subject}
               onChange={(event) => {
-                setSubject(event.target.value);
+                setSubject(event.target.value.trim());
               }}
             ></input>
+            {formErrors.subject && <div>{formErrors.subject}</div>}
             <input
               style={{
                 backgroundColor: darkMode && "#333",
@@ -98,9 +125,10 @@ function Contact() {
               name="user_email"
               value={email}
               onChange={(event) => {
-                setEmail(event.target.value);
+                setEmail(event.target.value.trim());
               }}
             ></input>
+            {formErrors.email && <div>{formErrors.email}</div>}
             <textarea
               style={{
                 backgroundColor: darkMode && "#333",
@@ -110,12 +138,13 @@ function Contact() {
               placeholder="Message"
               name="message"
               onChange={(event) => {
-                setMessage(event.target.value);
+                setMessage(event.target.value.trim());
               }}
               value={message}
             >
               {message}
             </textarea>
+            {formErrors.message && <div>{formErrors.message}</div>}
             <button className="btn">
               <span>Submit</span>
             </button>
@@ -151,6 +180,7 @@ function Contact() {
               className="contact-info-item"
               href="https://github.com/fudge88"
               target="_blank"
+              rel="noreferrer"
             >
               <i class="icon ion-social-github"></i>&nbsp; Visit my Github
             </a>
@@ -158,6 +188,7 @@ function Contact() {
               className="contact-info-item"
               href="https://www.linkedin.com/in/f-akhlaq/"
               target="_blank"
+              rel="noreferrer"
             >
               <i class="icon ion-social-linkedin"></i>&nbsp; Visit my LinkedIn
             </a>
