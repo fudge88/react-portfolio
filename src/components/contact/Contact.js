@@ -1,4 +1,4 @@
-import { useContext, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import "./contact.css";
 import emailjs from "@emailjs/browser";
 import { modeContext } from "../../context";
@@ -11,96 +11,66 @@ function Contact() {
   const [email, setEmail] = useState("");
   const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
+  const [formErrors, setFormErrors] = useState({});
 
   const darkMode = mode.state.darkMode;
 
-  const [validateName, setValidateName] = useState({});
-  const [validateEmail, setValidateEmail] = useState({});
-  const [validateSubject, setValidateSubject] = useState({});
-  const [validateMessage, setValidateMessage] = useState({});
+  useEffect(async () => {
+    if (Object.keys(formErrors).length === 0) {
+      await emailjs.sendForm(
+        "service_t1poz6l",
+        "template_c7yvpie",
+        formRef.current,
+        "user_nSvDfzE3Zj0etYWKO8d8D"
+      );
+      setName("");
+      setEmail("");
+      setSubject("");
+      setMessage("");
+      setComplete(true);
+    } else {
+      console.log("handle error here and render");
+    }
+  }, [formErrors]);
 
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    const isValid = formValidation();
-    console.log(isValid);
-    if (isValid) {
-      emailjs
-        .sendForm(
-          "service_t1poz6l",
-          "template_c7yvpie",
-          formRef.current,
-          "user_nSvDfzE3Zj0etYWKO8d8D"
-        )
-        .then(
-          () => {
-            setName("");
-            setEmail("");
-            setSubject("");
-            setMessage("");
-            setComplete(true);
-          },
-          (error) => {
-            console.log(error.text);
-          }
-        );
-    } else {
-      console.log("handle error here and render");
-    }
+    formValidation();
   };
 
   const formValidation = () => {
-    const validateName = {};
-    const validateEmail = {};
-    const validateSubject = {};
-    const validateMessage = {};
-    let isValid = true;
+    const emailRegex = new RegExp(
+      /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:.[a-zA-Z0-9-]+)*$/
+    );
 
-    if (!name.trim()) {
-      validateName.noName = "Name is required";
-      isValid = false;
+    const errors = {};
+
+    if (!name) {
+      errors.name = "Name is required";
     }
-
-    const isValidEmail =
-      "/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:.[a-zA-Z0-9-]+)*$/";
 
     if (!email) {
-      validateEmail.noEmail = "Email is required";
-      isValid = false;
-    } else if (!email.match(isValidEmail)) {
-      validateEmail.incorrectEmail = "Please input a valid email address";
-      isValid = false;
-    } else {
-      isValid = true;
+      errors.email = "Email is required";
     }
 
-    if (!subject.trim()) {
-      validateSubject.noSubject = "Subject is required";
-      isValid = false;
-    } else {
-      isValid = true;
+    if (email && !emailRegex.test(email)) {
+      errors.email = "Please input a valid email address";
     }
 
-    if (message.length < 20) {
-      validateMessage.messageShort =
-        "Please give a short description of your project";
-      isValid = false;
-    } else {
-      isValid = true;
+    if (!subject) {
+      errors.subject = "Subject is required";
     }
 
-    if (!message.trim()) {
-      validateMessage.noMessage = "Message is required";
-      isValid = false;
-    } else {
-      isValid = true;
+    if (!message) {
+      errors.message = "Message is required";
     }
 
-    setValidateName(validateName);
-    setValidateEmail(validateEmail);
-    setValidateSubject(validateSubject);
-    setValidateMessage(validateMessage);
-    return isValid;
+    if (message && message.length < 20) {
+      errors.message = "Please give a short description of your project";
+    }
+
+    setFormErrors(errors);
   };
 
   return (
@@ -127,12 +97,10 @@ function Contact() {
               name="user_name"
               value={name}
               onChange={(event) => {
-                setName(event.target.value);
+                setName(event.target.value.trim());
               }}
             ></input>
-            {Object.keys(validateName).map((key) => {
-              return <div>{validateName[key]}</div>;
-            })}
+            {formErrors.name && <div>{formErrors.name}</div>}
             <input
               style={{
                 backgroundColor: darkMode && "#333",
@@ -143,13 +111,10 @@ function Contact() {
               name="user_subject"
               value={subject}
               onChange={(event) => {
-                setSubject(event.target.value);
+                setSubject(event.target.value.trim());
               }}
             ></input>
-            {Object.keys(validateSubject).map((key) => {
-              return <div>{validateSubject[key]}</div>;
-            })}
-
+            {formErrors.subject && <div>{formErrors.subject}</div>}
             <input
               style={{
                 backgroundColor: darkMode && "#333",
@@ -160,13 +125,10 @@ function Contact() {
               name="user_email"
               value={email}
               onChange={(event) => {
-                setEmail(event.target.value);
+                setEmail(event.target.value.trim());
               }}
             ></input>
-            {Object.keys(validateEmail).map((key) => {
-              return <div>{validateEmail[key]}</div>;
-            })}
-
+            {formErrors.email && <div>{formErrors.email}</div>}
             <textarea
               style={{
                 backgroundColor: darkMode && "#333",
@@ -176,15 +138,13 @@ function Contact() {
               placeholder="Message"
               name="message"
               onChange={(event) => {
-                setMessage(event.target.value);
+                setMessage(event.target.value.trim());
               }}
               value={message}
             >
               {message}
             </textarea>
-            {Object.keys(validateMessage).map((key) => {
-              return <div>{validateMessage[key]}</div>;
-            })}
+            {formErrors.message && <div>{formErrors.message}</div>}
             <button className="btn">
               <span>Submit</span>
             </button>
