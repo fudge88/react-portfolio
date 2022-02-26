@@ -6,6 +6,7 @@ import DownloadIcon from "@mui/icons-material/Download";
 import EmailIcon from "@mui/icons-material/Email";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import MyPDF from "../../Download/cv.pdf";
 
 function Contact() {
   const formRef = useRef();
@@ -168,12 +169,7 @@ function Contact() {
             </h3>
           </div>
           <div className="info-link-container">
-            <a
-              className="contact-info-item"
-              href="./assets/download/cv.pdf"
-              download="cv.pdf"
-              target="_blank"
-            >
+            <a className="contact-info-item" href={MyPDF} download="cv.pdf">
               <DownloadIcon /> &nbsp;Download Resume
             </a>
             <a className="contact-info-item" href="mailto:f.akhlaq@outlook.com">
