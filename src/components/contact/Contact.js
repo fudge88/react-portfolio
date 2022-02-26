@@ -2,6 +2,10 @@ import { useContext, useEffect, useRef, useState } from "react";
 import "./contact.css";
 import emailjs from "@emailjs/browser";
 import { modeContext } from "../../context";
+import DownloadIcon from "@mui/icons-material/Download";
+import EmailIcon from "@mui/icons-material/Email";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
 
 function Contact() {
   const formRef = useRef();
@@ -66,7 +70,7 @@ function Contact() {
       errors.message = "Message is required";
     }
 
-    if (message && message.length < 20) {
+    if (message && message.length < 10) {
       errors.message = "Please give a short description of your project";
     }
 
@@ -170,11 +174,11 @@ function Contact() {
               download="cv.pdf"
               target="_blank"
             >
-              <i class="ionicons ion-android-download"></i>&nbsp; Download
-              Resume
+              <DownloadIcon /> &nbsp;Download Resume
             </a>
             <a className="contact-info-item" href="mailto:f.akhlaq@outlook.com">
-              <i class="ionicons ion-ios-email"></i>&nbsp; Email me directly
+              <EmailIcon />
+              &nbsp; Email me directly
             </a>
             <a
               className="contact-info-item"
@@ -182,7 +186,8 @@ function Contact() {
               target="_blank"
               rel="noreferrer"
             >
-              <i class="icon ion-social-github"></i>&nbsp; Visit my Github
+              <GitHubIcon />
+              &nbsp; Visit my Github
             </a>
             <a
               className="contact-info-item"
@@ -190,7 +195,8 @@ function Contact() {
               target="_blank"
               rel="noreferrer"
             >
-              <i class="icon ion-social-linkedin"></i>&nbsp; Visit my LinkedIn
+              <LinkedInIcon />
+              &nbsp; Visit my LinkedIn
             </a>
           </div>
         </div>
