@@ -2,6 +2,8 @@
 
 A single-page application created using React, displaying information about myself, showcasing project work, and giving the user a means of contact.
 
+You can see the deployed application ![here](https://fudge88.github.io/react-portfolio/)
+
 ![portfolio demo](./img/postman.gif)
 
 ## User Story
