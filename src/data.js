@@ -31,7 +31,7 @@ export const frontEnd = [
     id: "5",
     img: "https://github.com/fudge88/javascript-multiple-choice-challange/raw/dev/assets/images/quiz-app.gif",
     live: "https://fudge88.github.io/javascript-multiple-choice-challange/",
-    repo: "https://github.com/fudge88/javascript-multiple-choice-challange/tree/dev",
+    repo: "https://github.com/fudge88/javascript-multiple-choice-challange",
     title: "Crime Quiz",
   },
   {
@@ -49,7 +49,7 @@ export const backEnd = [
     img: "https://github.com/fudge88/ecommerce-backend/raw/dev/img/ecom.gif",
     video:
       "https://drive.google.com/drive/folders/1sSUipZilS01jZNuutv9baDyFuByCu-jU",
-    repo: "https://github.com/fudge88/ecommerce-backend/tree/dev",
+    repo: "https://github.com/fudge88/ecommerce-backend",
     title: "E-Commerce",
   },
   {
@@ -57,7 +57,7 @@ export const backEnd = [
     img: "https://github.com/fudge88/team-profile-generator/raw/dev/dist/assets/questions.gif",
     video:
       "https://drive.google.com/drive/folders/17Z89XRdsKdNs0G8mk00MT03rcH9QpEj3",
-    repo: "https://github.com/fudge88/team-profile-generator/tree/dev",
+    repo: "https://github.com/fudge88/team-profile-generator",
     title: "Team Profile Generator",
   },
   {
@@ -65,7 +65,7 @@ export const backEnd = [
     img: "https://github.com/fudge88/employee-tracker-sql/raw/dev/img/et-demo.gif",
     video:
       "https://drive.google.com/drive/folders/1DLdF3_-PX2UVMxI8HHDnODS5KMSh4j8a",
-    repo: "https://github.com/fudge88/employee-tracker-sql/tree/dev",
+    repo: "https://github.com/fudge88/employee-tracker-sql",
     title: "Employee Tracker",
   },
   {
@@ -73,7 +73,7 @@ export const backEnd = [
     img: "https://github.com/fudge88/social-network-backend/raw/dev/img/postman.gif",
     video:
       "https://drive.google.com/drive/folders/1moF1qagp5ExPP1qPOcAPgIrHzExIlm4i",
-    repo: "https://github.com/fudge88/social-network-backend/tree/dev",
+    repo: "https://github.com/fudge88/social-network-backend",
     title: "Social Network",
   },
   {
@@ -81,7 +81,7 @@ export const backEnd = [
     img: "https://github.com/fudge88/readme-generator/raw/dev/assets/img/readme.gif",
     video:
       "https://drive.google.com/drive/folders/1Z3-xUghfRkOGizXHfOQO7X6_CAET0kaY",
-    repo: "https://github.com/fudge88/readme-generator/tree/dev",
+    repo: "https://github.com/fudge88/readme-generator",
     title: "ReadMe.md Generator",
   },
 ];
