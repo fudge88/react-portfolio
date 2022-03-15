@@ -165,7 +165,7 @@ function Contact() {
 						</h3>
 					</div>
 					<div className='info-link-container'>
-						<a className='contact-info-item' href={myPDF} download='cv.pdf'>
+						<a className='contact-info-item' href={myPDF} download='cv'>
 							<DownloadIcon /> &nbsp;Download Resume
 						</a>
 						<a className='contact-info-item' href='mailto:f.akhlaq@outlook.com'>
