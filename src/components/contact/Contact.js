@@ -20,22 +20,25 @@ function Contact() {
 
 	const darkMode = mode.state.darkMode;
 
-	useEffect(async () => {
-		if (Object.keys(formErrors).length === 0) {
-			await emailjs.sendForm(
-				'service_t1poz6l',
-				'template_c7yvpie',
-				formRef.current,
-				'user_nSvDfzE3Zj0etYWKO8d8D'
-			);
-			setName('');
-			setEmail('');
-			setSubject('');
-			setMessage('');
-			setComplete(true);
-		} else {
-			console.log('handle error here and render');
+	useEffect(() => {
+		async function handleForm() {
+			if (Object.keys(formErrors).length === 0) {
+				await emailjs.sendForm(
+					'service_t1poz6l',
+					'template_c7yvpie',
+					formRef.current,
+					'user_nSvDfzE3Zj0etYWKO8d8D'
+				);
+				setName('');
+				setEmail('');
+				setSubject('');
+				setMessage('');
+				setComplete(true);
+			} else {
+				console.log('handle error here and render');
+			}
 		}
+		handleForm();
 	}, [formErrors]);
 
 	const handleSubmit = (event) => {
