@@ -6,7 +6,7 @@ import DownloadIcon from '@mui/icons-material/Download';
 import EmailIcon from '@mui/icons-material/Email';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import myPDF from '../../download1/cv.pdf';
+import myPDF from '../../download/cv.pdf';
 
 function Contact() {
 	const formRef = useRef();
