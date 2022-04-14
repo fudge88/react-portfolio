@@ -1,0 +1,32 @@
+.project-container {
+  width: 90%;
+  margin: auto;
+  background-color: #363535;
+  padding: 2rem;
+  border-radius: 30px;
+}
+
+.frontend-project-title {
+  font-size: 2.5rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.btn-text:hover {
+  transform: scale(1.1);
+  color: orangered;
+  font-weight: 900;
+}
+.frontend-project-text {
+  text-align: center;
+  padding: 1rem;
+}
+
+@media screen and (max-width: 480px) {
+  .frontend-project-title {
+    text-align: center;
+  }
+  .frontend-project-text {
+    display: none;
+  }
+}
