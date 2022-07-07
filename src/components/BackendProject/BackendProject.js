@@ -88,23 +88,11 @@ export default function Projects() {
 									}}>
 									<Button
 										size="small"
-										href={item.live}
-										target="_blank"
-										rel="noreferrer"
-										sx={{
-											color: '#ff4500',
-											fontWeight: '700',
-										}}
-										className="btn-text">
-										Go to Website
-									</Button>
-									<Button
-										size="small"
 										href={item.repo}
 										target="_blank"
 										rel="noreferrer"
 										sx={{
-											color: '#000',
+											color: '#ff4500',
 											fontWeight: '700',
 										}}
 										className="btn-text">

@@ -16,8 +16,8 @@ export const frontEnd = [
 	{
 		id: '3',
 		img: 'https://github.com/fudge88/weather-dashoard/raw/main/assets/images/responsive.gif',
-		live: 'https://github.com/fudge88/weather-dashoard',
-		repo: 'https://fudge88.github.io/weather-dashoard/',
+		live: 'https://fudge88.github.io/weather-dashoard/',
+		repo: 'https://github.com/fudge88/weather-dashoard',
 		title: 'Weather Dashboard',
 	},
 	{
